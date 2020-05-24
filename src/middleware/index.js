@@ -2,7 +2,7 @@ import { ADD_ARTICLE } from '../constants/action-types';
 
 const forbiddenWords = ["money", "free"];
 
-export function forbiddenWordMiddleware({dispatch}){
+export function forbiddenWordsMiddleware({dispatch}){
     return function(next){
         return function(action){
             if(action.type == "ADD_ARTICLE"){

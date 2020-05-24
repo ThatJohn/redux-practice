@@ -1,7 +1,8 @@
 import { ADD_ARTICLE } from '../constants/action-types'
 
 const initialState = {
-    articles: []
+    articles: [],
+    remoteArticles: []
 }
 
 function rootReducer(state = initialState, action){
@@ -9,6 +10,10 @@ function rootReducer(state = initialState, action){
         case ADD_ARTICLE:
             return Object.assign({}, state, {
                 articles: state.articles.concat(action.payload)
+            });
+        case 'DATA_LOADED':
+            return Object.assign({}, state, {
+                remoteArticles: state.remoteArticles.concat(action.payload)
             });
         default:
             return state;
